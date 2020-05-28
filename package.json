@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "A simple image viewer for local files to display in a browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.js\""
+  },
+  "author": "commenthol",
+  "license": "Unlicense",
+  "keywords": [
+    "simple",
+    "offline",
+    "image",
+    "viewer"
+  ],
+  "devDependencies": {
+    "eslint": "^7.1.0"
+  }
+}
