@@ -1,16 +1,17 @@
 const Show = require('./Show.js')
-const {
-  scrollDown,
-  scrollUp
-} = require('./utils.js')
+const { scrollDown, scrollUp } = require('./utils.js')
 
 // eslint-disable-next-line
-function img (opts) {
+function img(opts) {
   // ----
 
   // eslint-disable-next-line no-undef
-  const list = files.split(/[\n\r]/).filter(Boolean).map(file => file.trim()).sort()
-  const show = new Show (list, opts)
+  const list = files
+    .split(/[\n\r]/)
+    .filter(Boolean)
+    .map((file) => file.trim())
+    .sort()
+  const show = new Show(list, opts)
 
   if (window.location.hash === '#prev') {
     show.i = list.length
@@ -30,10 +31,12 @@ function img (opts) {
     }
     switch (key || ev.key) {
       case 'ArrowRight':
-        if (!scrollDown()) show.update(ev.ctrlKey ? 10 : 1)
+        scrollDown()
+        show.update(ev.ctrlKey ? 10 : 1)
         break
       case 'ArrowLeft':
-        if (!scrollUp()) show.update(ev.ctrlKey ? -10 : -1)
+        scrollUp()
+        show.update(ev.ctrlKey ? -10 : -1)
         break
       case 'q':
       case 'Escape':
